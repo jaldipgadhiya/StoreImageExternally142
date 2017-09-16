@@ -31,21 +31,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Get Drawable Image
+
                 Drawable drawable = getDrawable(R.drawable.entertainment);
+
+                //Crete Bitmap object
 
                 Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
 
                 File file;
 
+                // Get path to store image from drawable
                 String path = Environment.getExternalStorageDirectory().toString();
+
+                // Get File object
 
                 file = new File(path, "entertainment"+".png");
 
                 try{
-
+                    //FileOutPutstream object
                     FileOutputStream stream = new FileOutputStream(file);
+                    //compress image
                     bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
+                    //Stream flush
                     stream.flush();
+                    //Stream close
                     stream.close();
                 }
                 catch (IOException e) // Catch the exception
