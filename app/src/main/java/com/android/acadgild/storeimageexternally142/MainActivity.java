@@ -63,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+                //Get file absolute path
                 Uri savedImageURI = Uri.parse(file.getAbsolutePath());
-
+                //Toast to show image saved message with saved location.
                 Toast.makeText(MainActivity.this, "Image saved in external storage."+"\n" + savedImageURI, Toast.LENGTH_LONG).show();
 
 
